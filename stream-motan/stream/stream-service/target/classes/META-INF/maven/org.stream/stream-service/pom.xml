@@ -12,6 +12,22 @@
 	<name>stream-service</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest-all</artifactId>
+		</dependency>
+
 		<!-- motan start -->
 		<dependency>
 			<groupId>com.weibo</groupId>
@@ -31,6 +47,31 @@
 		</dependency>
 		<!-- motan end -->
 
+		<!-- redis start -->
+		<!--1.7.2 开始支持Redis 集群 -->
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-redis</artifactId>
+		</dependency>
+		<!-- Redis 缓存Jar -->
+		<dependency>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+		</dependency>
+		<!-- redis end -->
+		
+		<!-- mongodb end -->
+		<dependency>
+			<groupId>org.mongodb</groupId>
+			<artifactId>mongo-java-driver</artifactId>
+		</dependency>
+		<!-- spring-data-mongodb -->
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-mongodb</artifactId>
+		</dependency>
+		<!-- mongodb end -->
+		
 		<!-- inner start -->
 		<dependency>
 			<groupId>org.stream</groupId>
@@ -43,36 +84,7 @@
 			<artifactId>stream-dao</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-
-		<dependency>
-			<groupId>com.stream.commons</groupId>
-			<artifactId>stream-common-redis</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.stream.commons</groupId>
-			<artifactId>stream-common-mongodb</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
 		<!-- inner end -->
-		
-		<!-- test start -->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-test</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.hamcrest</groupId>
-			<artifactId>hamcrest-all</artifactId>
-		</dependency>
-		<!-- test end -->
 
 	</dependencies>
 </project>

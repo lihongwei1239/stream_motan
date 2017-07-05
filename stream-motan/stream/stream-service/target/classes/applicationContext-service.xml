@@ -30,7 +30,6 @@
 		location="classpath*:*.properties,classpath*:dev/*.properties"
 		ignore-resource-not-found="true" />
 		
-	<import resource="classpath*:spring-redis.xml" />
-	<import resource="classpath*:spring-mongodb.xml" />
+	<import resource="classpath*:redis.xml" />
 	
 </beans>
