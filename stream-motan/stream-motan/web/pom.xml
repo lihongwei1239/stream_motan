@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.stream.web</groupId>
+	<artifactId>web</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<modules>
+		<module>stream-api</module>
+		<module>stream-open-api</module>
+	</modules>
+
+	<properties>
+
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<spring.version>4.3.8.RELEASE</spring.version>
+
+		<junit.version>4.12</junit.version>
+		<hamcrest.version>1.3</hamcrest.version>
+
+		<mybatis-spring.version>1.3.1</mybatis-spring.version>
+		<mybatis.version>3.4.4</mybatis.version>
+
+		<motan.version>0.3.0</motan.version>
+
+		<logback.version>1.2.3</logback.version>
+		<slf4j-api.version>1.7.25</slf4j-api.version>
+		<logback-spring.version>0.1.4</logback-spring.version>
+
+		<jackson.version>2.8.9</jackson.version>
+		<jackson-jaxrs.version>1.9.13</jackson-jaxrs.version>
+		<fastjson.version>1.2.33</fastjson.version>
+
+		<httpclient.version>4.5.2</httpclient.version>
+		<guava.version>22.0</guava.version>
+
+		<commons-lang3.version>3.6</commons-lang3.version>
+		<commons-net.version>3.6</commons-net.version>
+		<commons-io.version>2.5</commons-io.version>
+		<commons-fileupload.version>1.3.1</commons-fileupload.version>
+
+		<redis.version>2.9.0</redis.version>
+		<spring-redis.version>1.7.2.RELEASE</spring-redis.version>
+
+		<mongodb.version>3.4.2</mongodb.version>
+		<spring-mongodb.version>1.10.1.RELEASE</spring-mongodb.version>
+
+		<maven-compiler-plugin.version>3.5.1</maven-compiler-plugin.version>
+		<source.version>1.8</source.version>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven-compiler-plugin.version}</version>
+				<configuration>
+					<source>${source.version}</source>
+					<target>${source.version}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- spring start -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-web</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-webmvc</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<!-- spring end -->
+
+			<!-- motan start -->
+			<dependency>
+				<groupId>com.weibo</groupId>
+				<artifactId>motan-core</artifactId>
+				<version>${motan.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.weibo</groupId>
+				<artifactId>motan-transport-netty</artifactId>
+				<version>${motan.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.weibo</groupId>
+				<artifactId>motan-springsupport</artifactId>
+				<version>${motan.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.weibo</groupId>
+				<artifactId>motan-registry-zookeeper</artifactId>
+				<version>${motan.version}</version>
+			</dependency>
+			<!-- motan end -->
+
+			<!-- logback start -->
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>${slf4j-api.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>ch.qos.logback</groupId>
+				<artifactId>logback-classic</artifactId>
+				<version>${logback.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>ch.qos.logback</groupId>
+				<artifactId>logback-core</artifactId>
+				<version>${logback.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.logback-extensions</groupId>
+				<artifactId>logback-ext-spring</artifactId>
+				<version>${logback-spring.version}</version>
+			</dependency>
+			<!-- logback end -->
+
+			<!-- jackson start -->
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-core</artifactId>
+				<version>${jackson.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-annotations</artifactId>
+				<version>${jackson.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-databind</artifactId>
+				<version>${jackson.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.fasterxml.jackson.jaxrs</groupId>
+				<artifactId>jackson-jaxrs-json-provider</artifactId>
+				<version>${jackson.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.codehaus.jackson</groupId>
+				<artifactId>jackson-jaxrs</artifactId>
+				<version>${jackson-jaxrs.version}</version>
+			</dependency>
+			<!-- jackson end -->
+
+			<!-- fastjson start -->
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>fastjson</artifactId>
+				<version>${fastjson.version}</version>
+			</dependency>
+			<!-- fastjson end -->
+
+			<!-- commons start -->
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>${commons-lang3.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-io</groupId>
+				<artifactId>commons-io</artifactId>
+				<version>${commons-io.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-fileupload</groupId>
+				<artifactId>commons-fileupload</artifactId>
+				<version>${commons-fileupload.version}</version>
+			</dependency>
+			<!-- commons end -->
+
+			<!-- inner start -->
+			<dependency>
+				<groupId>org.stream</groupId>
+				<artifactId>stream-service-api</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+			<!-- inner end -->
+		</dependencies>
+	</dependencyManagement>
+</project>
