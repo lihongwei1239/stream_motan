@@ -19,7 +19,6 @@ public class RedisTest extends AbstractConfigTest{
 		String value = "name01";
 		if(redisTemplate.hasKey(key)){
 			String result = redisTemplate.opsForValue().get(key).toString();
-			System.out.println(result);
 		}else{
 			redisTemplate.opsForValue().set(key, value);
 		}
