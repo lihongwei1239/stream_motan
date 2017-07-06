@@ -11,26 +11,18 @@ import org.springframework.data.redis.core.RedisTemplate;
 public class RedisTest extends AbstractConfigTest{
 	
 	@Autowired
-	private RedisTemplate redisTemplate;
+	private RedisTemplate<String, Object> redisTemplate;
 
 	@Test
 	public void testName() throws Exception {
 		String key = "name";
 		String value = "name01";
-		redisTemplate.execute(new RedisCallback<Long>() {
-            public Long doInRedis(RedisConnection connection)
-                    throws DataAccessException {
-                byte[] keyb = key.getBytes();
-                byte[] valueb = value.getBytes();
-                // 判断当前值是否已经存在
-                if (connection.exists(keyb)) {
-                    // 删除原数据
-                    connection.del(keyb);
-                }
-                connection.set(keyb, valueb);
-                return 1L;
-            }
-        });
+		if(redisTemplate.hasKey(key)){
+			String result = redisTemplate.opsForValue().get(key).toString();
+			System.out.println(result);
+		}else{
+			redisTemplate.opsForValue().set(key, value);
+		}
 	}
 	
 }

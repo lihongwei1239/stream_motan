@@ -20,42 +20,43 @@
 		<property name="clusterNodes">
 			<set>
 				<bean class="org.springframework.data.redis.connection.RedisNode">
-					<constructor-arg name="host" value="${redis.node1.host}"/>
-					<constructor-arg name="port" value="${redis.node1.port}"/>
+					<constructor-arg name="host" value="${redis.node1.host}" />
+					<constructor-arg name="port" value="${redis.node1.port}" />
 				</bean>
 				<bean class="org.springframework.data.redis.connection.RedisNode">
-					<constructor-arg name="host" value="${redis.node2.host}"/>
-					<constructor-arg name="port" value="${redis.node2.port}"/>
+					<constructor-arg name="host" value="${redis.node2.host}" />
+					<constructor-arg name="port" value="${redis.node2.port}" />
 				</bean>
 				<bean class="org.springframework.data.redis.connection.RedisNode">
-					<constructor-arg name="host" value="${redis.node3.host}"/>
-					<constructor-arg name="port" value="${redis.node3.port}"/>
+					<constructor-arg name="host" value="${redis.node3.host}" />
+					<constructor-arg name="port" value="${redis.node3.port}" />
 				</bean>
 			</set>
 		</property>
 	</bean>
 
 	<!-- ReDis连接工厂 -->
-    <bean id="redis4CacheConnectionFactory"
-        class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
-        <constructor-arg name="clusterConfig" ref="redisClusterConfig" />
-        <property name="poolConfig" ref="redisPoolConfig" />
-    </bean>
+	<bean id="jedisConnectionFactory"
+		class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
+		<constructor-arg name="clusterConfig" ref="redisClusterConfig" />
+		<property name="poolConfig" ref="redisPoolConfig" />
+	</bean>
 
-	<!-- 存储序列化 -->
-	<bean name="stringRedisSerializer"
+	<!-- 缓存序列化方式 -->
+	<!--对key的默认序列化器。默认值是StringSerializer -->
+	<bean id="keySerializer"
 		class="org.springframework.data.redis.serializer.StringRedisSerializer" />
+	<!--是对value的默认序列化器，默认值是取自DefaultSerializer的JdkSerializationRedisSerializer。 -->
+	<bean id="valueSerializer"
+		class="org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer" />
 
 	<!-- 集群Resis使用模板 -->
 	<bean id="clusterRedisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
-		<property name="connectionFactory" ref="redis4CacheConnectionFactory" />
-		<property name="keySerializer" ref="stringRedisSerializer" />
-		<property name="hashKeySerializer" ref="stringRedisSerializer" />
-		<property name="valueSerializer" ref="stringRedisSerializer" />
-		<property name="hashValueSerializer" ref="stringRedisSerializer" />
-
-
+		<property name="connectionFactory" ref="jedisConnectionFactory" />
+		<property name="keySerializer" ref="keySerializer" />
+		<property name="hashKeySerializer" ref="valueSerializer" />
+		<property name="valueSerializer" ref="keySerializer" />
+		<property name="hashValueSerializer" ref="valueSerializer" />
 	</bean>
-
 
 </beans>
