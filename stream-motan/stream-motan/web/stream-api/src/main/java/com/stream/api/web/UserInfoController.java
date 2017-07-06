@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.stream.service.api.entity.UserInfo;
-import com.stream.service.api.service.UserInfoService;
+import com.stream.service.api.entity.stream.UserInfo;
+import com.stream.service.api.service.stream.UserInfoService;
 
 @Controller
 @RequestMapping("api/userInfo")

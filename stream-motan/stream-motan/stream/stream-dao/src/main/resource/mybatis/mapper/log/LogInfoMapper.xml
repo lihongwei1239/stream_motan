@@ -2,16 +2,16 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.stream.mapper.log.LogInfoMapper">
 
-	<insert id="saveUserInfo" parameterType="com.stream.service.api.entity.log.LogInfo">
+	<insert id="saveLogInfo" parameterType="com.stream.service.api.entity.log.LogInfo">
 		insert into sys_log_info_t
 		<trim prefix="(" suffix=")" suffixOverrides=",">
-			<if test="userName !=null">
+			<if test="logIp !=null">
 				log_ip,
 			</if>
 		</trim>
 		<trim prefix=" values (" suffix=")" suffixOverrides=",">
-			<if test="userName != null">
-				#{userName,jdbcType=VARCHAR},
+			<if test="logIp != null">
+				#{logIp,jdbcType=VARCHAR},
 			</if>
 		</trim>
 	</insert>
@@ -19,11 +19,11 @@
 	<resultMap id="BaseResultMap"
 		type="com.stream.service.api.entity.log.LogInfo">
 		<id column="logInfoId" jdbcType="INTEGER" property="logInfoId" />
-		<result column="userName" jdbcType="VARCHAR" property="userName" />
+		<result column="logIp" jdbcType="VARCHAR" property="logIp" />
 	</resultMap>
 	
 	<sql id="Base_Column_List">
-		log_info_id logInfoId,log_ip userName
+		log_info_id logInfoId,log_ip logIp
 	</sql>
 
 	<select id="selectAll" parameterType="com.stream.service.api.entity.log.LogInfo"
@@ -36,8 +36,8 @@
 				<if test="logInfoId != null">
 					and log_info_id = #{logInfoId,jdbcType=INTEGER}
 				</if>
-				<if test="userName != null">
-					and log_ip = #{userName,jdbcType=VARCHAR}
+				<if test="logIp != null">
+					and log_ip = #{logIp,jdbcType=VARCHAR}
 				</if>
 			</trim>
 		</where>

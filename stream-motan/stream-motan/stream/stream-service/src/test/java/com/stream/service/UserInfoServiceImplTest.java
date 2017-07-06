@@ -7,10 +7,11 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.alibaba.fastjson.JSON;
-import com.stream.service.api.entity.UserInfo;
-import com.stream.stream.mapper.UserInfoMapper;
+import com.stream.mapper.stream.UserInfoMapper;
+import com.stream.service.api.entity.stream.UserInfo;
+import com.stream.service.stream.UserInfoServiceImpl;
 
-public class DemoServiceImplTest extends AbstractConfigTest{
+public class UserInfoServiceImplTest extends AbstractConfigTest{
 	
 	@Autowired
 	private UserInfoMapper userInfoMapper;

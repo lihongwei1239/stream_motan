@@ -14,7 +14,7 @@
 	<motan:basicService id="StreamClientBasicConfig"
 		export="10080" group="stream" module="stream" registry="regCenter" />
 
-	<motan:service interface="com.stream.service.api.service.UserInfoService"
+	<motan:service interface="com.stream.service.api.service.stream.UserInfoService"
 		ref="userInfoServiceImpl" basicService="StreamClientBasicConfig"
 		export="10080" />
 

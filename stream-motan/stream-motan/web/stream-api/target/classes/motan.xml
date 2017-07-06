@@ -16,7 +16,7 @@
 		retries="3" />
 
 	<motan:referer id="userInfoService"
-		interface="com.stream.service.api.service.UserInfoService"
+		interface="com.stream.service.api.service.stream.UserInfoService"
 		basicReferer="StreamClientBasicConfig" />
 
 </beans>
