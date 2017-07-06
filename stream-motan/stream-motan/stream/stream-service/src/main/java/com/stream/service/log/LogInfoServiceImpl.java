@@ -1,4 +1,4 @@
-package com.stream.service;
+package com.stream.service.log;
 
 import java.util.List;
 
@@ -8,36 +8,36 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.alibaba.fastjson.JSON;
-import com.stream.mapper.UserInfoMapper;
-import com.stream.service.api.entity.UserInfo;
-import com.stream.service.api.service.UserInfoService;
+import com.stream.mapper.log.LogInfoMapper;
+import com.stream.service.api.entity.log.LogInfo;
+import com.stream.service.api.service.log.LogInfoService;
 
 @Service
-public class UserInfoServiceImpl implements UserInfoService {
+public class LogInfoServiceImpl implements LogInfoService {
 
-	private static final Logger logger = LoggerFactory.getLogger(UserInfoServiceImpl.class);
+	private static final Logger logger = LoggerFactory.getLogger(LogInfoServiceImpl.class);
 	
 	@Autowired
-	private UserInfoMapper userInfoMapper;
+	private LogInfoMapper logInfoMapper;
 	
 	@Override
-	public void saveUserInfo(UserInfo userInfo) throws Exception {
+	public void saveLogInfo(LogInfo LogInfo) throws Exception {
 		// TODO Auto-generated method stub
 		logger.info("保存用户信息 开始");
 		
-		logger.info("请求报文:"+JSON.toJSONString(userInfo));
-		userInfoMapper.saveUserInfo(userInfo);
+		logger.info("请求报文:"+JSON.toJSONString(LogInfo));
+		logInfoMapper.saveLogInfo(LogInfo);
 		
 		logger.info("保存用户信息 结束");
 		
 	}
 
 	@Override
-	public List<UserInfo> selectAll() throws Exception {
+	public List<LogInfo> selectAll() throws Exception {
 		// TODO Auto-generated method stub
 		logger.info("查询所有用户信息  开始");
 		
-		List<UserInfo> result = userInfoMapper.selectAll();
+		List<LogInfo> result = logInfoMapper.selectAll();
 		logger.info("响应报文:"+JSON.toJSONString(result));
 		
 		logger.info("查询所有用户信息  结束");

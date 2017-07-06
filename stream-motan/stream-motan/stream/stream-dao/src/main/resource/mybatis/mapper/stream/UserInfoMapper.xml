@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.stream.mapper.UserInfoMapper">
+<mapper namespace="com.stream.mapper.stream.UserInfoMapper">
 
-	<insert id="saveUserInfo" parameterType="com.stream.service.api.entity.UserInfo">
+	<insert id="saveUserInfo" parameterType="com.stream.service.api.entity.stream.UserInfo">
 		insert into sys_user_info_t
 		<trim prefix="(" suffix=")" suffixOverrides=",">
 			<if test="userName !=null">
@@ -17,7 +17,7 @@
 	</insert>
 	
 	<resultMap id="BaseResultMap"
-		type="com.stream.service.api.entity.UserInfo">
+		type="com.stream.service.api.entity.stream.UserInfo">
 		<id column="userInfoId" jdbcType="INTEGER" property="userInfoId" />
 		<result column="userName" jdbcType="VARCHAR" property="userName" />
 	</resultMap>
@@ -26,7 +26,7 @@
 		user_info_id userInfoId,user_name userName
 	</sql>
 
-	<select id="selectAll" parameterType="com.stream.service.api.entity.UserInfo"
+	<select id="selectAll" parameterType="com.stream.service.api.entity.stream.UserInfo"
 		resultMap="BaseResultMap">
 		select
 		<include refid="Base_Column_List" />

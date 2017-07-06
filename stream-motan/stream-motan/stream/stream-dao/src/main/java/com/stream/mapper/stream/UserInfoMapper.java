@@ -1,12 +1,13 @@
-package com.stream.service.api.service;
+package com.stream.mapper.stream;
 
 import java.util.List;
 
-import com.stream.service.api.entity.UserInfo;
+import com.stream.service.api.entity.stream.UserInfo;
 
-public interface UserInfoService {
+public interface UserInfoMapper {
 
 	void saveUserInfo(UserInfo userInfo) throws Exception;
 
 	List<UserInfo> selectAll() throws Exception;
+
 }

@@ -1,4 +1,4 @@
-package com.stream.service.api.entity;
+package com.stream.service.api.entity.stream;
 
 import java.io.Serializable;
 
