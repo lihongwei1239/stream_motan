@@ -50,10 +50,10 @@
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<property name="mapperLocations" value="classpath*:mybatis/mapper/**/*.xml" />
-		<!-- <property name="plugins">
+		<property name="typeAliasesPackage" value="com.stream.service.api" />
+		<property name="plugins">
 			<array>
-				MyBatis分页插件
-				<bean class="com.github.pagehelper.PageHelper">
+				<bean class="com.github.pagehelper.PageInterceptor">
 					<property name="properties">
 						<value>
 							helperDialect=mysql
@@ -61,7 +61,7 @@
 					</property>
 				</bean>
 			</array>
-		</property> -->
+		</property>
 	</bean>
 
 	<!-- mapper扫描 -->
