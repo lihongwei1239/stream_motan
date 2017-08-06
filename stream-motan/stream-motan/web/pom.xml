@@ -22,11 +22,16 @@
 
 		<mybatis-spring.version>1.3.1</mybatis-spring.version>
 		<mybatis.version>3.4.4</mybatis.version>
+		<pagehelper.version>5.0.3</pagehelper.version>
+		
+		<mysql.version>5.1.38</mysql.version>
+		<druid.version>1.0.18</druid.version>
 
 		<motan.version>0.3.0</motan.version>
 
 		<logback.version>1.2.3</logback.version>
 		<slf4j-api.version>1.7.25</slf4j-api.version>
+		<slf4j-log4j12.version>1.7.25</slf4j-log4j12.version>
 		<logback-spring.version>0.1.4</logback-spring.version>
 
 		<jackson.version>2.8.9</jackson.version>
@@ -40,6 +45,13 @@
 		<commons-net.version>3.6</commons-net.version>
 		<commons-io.version>2.5</commons-io.version>
 		<commons-fileupload.version>1.3.1</commons-fileupload.version>
+		<commons-pool2.version>2.0</commons-pool2.version>
+		<commons-beanutils.version>1.9.3</commons-beanutils.version>
+		<commons-codec.version>1.10</commons-codec.version>
+		<commons-collections4.version>4.1</commons-collections4.version>
+
+		<strman.version>0.4.0</strman.version>
+		<joda-time.version>2.9.9</joda-time.version>
 
 		<redis.version>2.9.0</redis.version>
 		<spring-redis.version>1.7.2.RELEASE</spring-redis.version>
@@ -162,11 +174,16 @@
 			</dependency>
 			<!-- fastjson end -->
 
-			<!-- commons start -->
+				<!-- commons start -->
 			<dependency>
 				<groupId>org.apache.commons</groupId>
 				<artifactId>commons-lang3</artifactId>
 				<version>${commons-lang3.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-net</groupId>
+				<artifactId>commons-net</artifactId>
+				<version>${commons-net.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>commons-io</groupId>
@@ -178,7 +195,43 @@
 				<artifactId>commons-fileupload</artifactId>
 				<version>${commons-fileupload.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-pool2</artifactId>
+				<version>${commons-pool2.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-beanutils</groupId>
+				<artifactId>commons-beanutils</artifactId>
+				<version>${commons-beanutils.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-codec</groupId>
+				<artifactId>commons-codec</artifactId>
+				<version>${commons-codec.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-collections4</artifactId>
+				<version>${commons-collections4.version}</version>
+			</dependency>
 			<!-- commons end -->
+
+			<!-- strman start -->
+			<dependency>
+				<groupId>com.shekhargulati</groupId>
+				<artifactId>strman</artifactId>
+				<version>${strman.version}</version>
+			</dependency>
+			<!-- strman end -->
+
+			<!-- joda-time start -->
+			<dependency>
+				<groupId>joda-time</groupId>
+				<artifactId>joda-time</artifactId>
+				<version>${joda-time.version}</version>
+			</dependency>
+			<!-- joda-time end -->
 
 			<!-- inner start -->
 			<dependency>

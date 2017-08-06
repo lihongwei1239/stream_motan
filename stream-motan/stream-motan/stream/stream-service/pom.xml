@@ -44,7 +44,7 @@
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 
-		<dependency>
+		<!-- <dependency>
 			<groupId>com.stream.commons</groupId>
 			<artifactId>stream-common-redis</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
@@ -54,7 +54,7 @@
 			<groupId>com.stream.commons</groupId>
 			<artifactId>stream-common-mongodb</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
+		</dependency> -->
 		<!-- inner end -->
 		
 		<!-- test start -->

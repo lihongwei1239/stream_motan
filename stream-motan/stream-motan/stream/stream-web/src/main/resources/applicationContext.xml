@@ -21,8 +21,6 @@
 	
 	<import resource="classpath*:applicationContext-service.xml" />	
 	<import resource="classpath*:motan.xml" />
-	<import resource="classpath*:redis.xml" />
-	<import resource="classpath*:mongodb.xml" />
 	
 	<bean class="com.stream.web.listener.StartupListener" />
 

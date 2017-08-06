@@ -359,34 +359,6 @@
 			</dependency>
 			<!-- joda-time end -->
 
-			<!-- redis start -->
-			<!--1.7.2 开始支持Redis 集群 -->
-			<dependency>
-				<groupId>org.springframework.data</groupId>
-				<artifactId>spring-data-redis</artifactId>
-				<version>${spring-redis.version}</version>
-			</dependency>
-			<!-- Redis 缓存Jar -->
-			<dependency>
-				<groupId>redis.clients</groupId>
-				<artifactId>jedis</artifactId>
-				<version>${redis.version}</version>
-			</dependency>
-			<!-- redis end -->
-
-			<!-- mongodb start -->
-			<dependency>
-				<groupId>org.mongodb</groupId>
-				<artifactId>mongo-java-driver</artifactId>
-				<version>${mongodb.version}</version>
-			</dependency>
-			<!-- spring-data-mongodb -->
-			<dependency>
-				<groupId>org.springframework.data</groupId>
-				<artifactId>spring-data-mongodb</artifactId>
-				<version>${spring-mongodb.version}</version>
-			</dependency>
-			<!-- mongodb end -->
 		</dependencies>
 
 	</dependencyManagement>
